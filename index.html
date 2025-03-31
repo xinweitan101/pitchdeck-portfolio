@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Tan Xin Wei | Pitch Decks</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f2f2f2;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    ul {
-      list-style-type: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eaf1f8;
+      color: #1a1a1a;
+      margin: 0;
       padding: 0;
-      max-width: 600px;
-      margin: 30px auto;
     }
+
+    header {
+      background-color: #0b3d91;
+      padding: 30px 0;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
     li {
-      background-color: #fff;
-      padding: 16px 24px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      margin-bottom: 20px;
+      padding: 18px 24px;
+      border-left: 6px solid #0b3d91;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
     }
+
+    li:hover {
+      transform: translateY(-4px);
+    }
+
     a {
       text-decoration: none;
-      color: #0077cc;
-      font-weight: bold;
+      color: #0b3d91;
+      font-weight: 600;
+      font-size: 1.1em;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -39,11 +64,18 @@
 </head>
 <body>
 
-  <h1>Pitch Deck Showcase</h1>
-  <ul>
-    <li><a href="Tan Xin Wei - ANF Pitch Deck.pdf" target="_blank">Abercrombie & Fitch – Long Pitch Deck</a></li>
-    <li><a href="Tan Xin Wei - FX Trade Pitch.pdf" target="_blank">AUD/USD – Long Pitch Deck</a></li>
-  </ul>
+  <header>
+    <h1>Tan Xin Wei | Pitch Deck Showcase</h1>
+  </header>
+
+  <main>
+    <ul>
+      <li><a href="Tan Xin Wei - CME Pitch Deck.pdf" target="_blank">CME Group – Stock Pitch Deck</a></li>
+      <li><a href="Tan Xin Wei - FX Trade Pitch.pdf" target="_blank">AUD/USD – FX Pitch Deck</a></li>
+      <li><a href="Tan Xin Wei - Rates Trade Pitch.pdf" target="_blank">2s5s Flattener – Rates Pitch Deck</a></li>
+      <li><a href="Tan Xin Wei - ANF Pitch Deck.pdf" target="_blank">Abercrombie & Fitch – Stock Pitch Deck</a></li>
+    </ul>
+  </main>
 
 </body>
 </html>
