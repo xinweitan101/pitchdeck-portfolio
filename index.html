@@ -9,35 +9,85 @@ layout: none
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Tan Xin Wei | Portfolio Showcase</title>
   <style>
-    body {
-      background: #eef4f9;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    /* ---------- Base / Reset ---------- */
+    :root {
+      --brand: #0b3d62;
+      --ink: #13324a;
+      --card: rgba(255, 255, 255, 0.92);
+      --border: rgba(11, 61, 98, 0.12);
+      --shadow: 0 6px 24px rgba(0,0,0,0.08);
     }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.5;
+      /* Background image (put your file next to this HTML, or update the path) */
+      background: #eef4f9 url('background.jpeg') center / cover no-repeat fixed;
+    }
+
+    /* subtle page backdrop for readability */
+    .page {
+      background: rgba(255,255,255,0.65);
+      min-height: 100vh;
+      padding: 48px 0;
+      backdrop-filter: blur(2px);
+    }
+
+    /* ---------- Layout ---------- */
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 0 20px 40px;
     }
+
+    /* ---------- Header ---------- */
     h1 {
-      background: #004b8d;
+      background: var(--brand);
       color: #fff;
       padding: 20px;
-      border-radius: 6px;
-      margin-bottom: 40px;
+      border-radius: 10px;
+      margin: 0 0 16px 0;
       text-align: center;
+      letter-spacing: 0.2px;
     }
-    section {
-      margin-bottom: 60px;
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 8px 0 40px;
     }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--brand);
+      border: 1px solid var(--brand);
+      background: #fff;
+      box-shadow: var(--shadow);
+      transition: transform .05s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover { background: #f7fbff; transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+
+    /* ---------- Sections ---------- */
+    section { margin-bottom: 48px; }
     section h2 {
-      color: #004b8d;
-      margin-bottom: 16px;
-      border-bottom: 2px solid #004b8d;
+      color: var(--brand);
+      margin: 0 0 16px 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--brand);
       display: inline-block;
-      padding-bottom: 4px;
+      font-size: 1.25rem;
+      letter-spacing: 0.2px;
     }
+
+    /* ---------- Cards ---------- */
     .card-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -46,103 +96,120 @@ layout: none
     }
     .card {
       display: block;
-      background: #fff;
-      border-left: 6px solid #004b8d;
-      border-radius: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 6px solid var(--brand);
+      border-radius: 10px;
       padding: 16px;
       text-decoration: none;
-      color: #004b8d;
-      font-weight: bold;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: background 0.2s ease;
+      color: var(--brand);
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      transition: transform .05s ease, background .15s ease, border-color .15s ease;
     }
     .card:hover {
-      background: #f0f8ff;
+      background: rgba(255,255,255,0.98);
+      transform: translateY(-1px);
+    }
+
+    /* ---------- Small screens ---------- */
+    @media (max-width: 480px) {
+      h1 { font-size: 1.35rem; padding: 16px; }
+      .btn { padding: 9px 12px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Tan Xin Wei | Portfolio Showcase</h1>
+  <div class="page">
+    <div class="container">
+      <h1>Tan Xin Wei | Portfolio Showcase</h1>
 
-    <!-- 1. RESUME -->
-    <section id="resume">
-      <h2>Resume</h2>
-      <div class="card-list">
-        <a href="Tan Xin Wei - Resume (Sept 2025).pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          Tan Xin Wei - Resume (Sept 2025)
+      <!-- LinkedIn under main title -->
+      <div class="actions">
+        <a class="btn" href="https://www.linkedin.com/in/xin-wei-tan-036360294/?originalSubdomain=sg" target="_blank" rel="noopener">
+          LinkedIn
         </a>
       </div>
-    </section>
 
-    <!-- 2. EQUITY RESEARCH PITCHES -->
-    <section id="equity-pitches">
-      <h2>Equity Research Pitches</h2>
-      <div class="card-list">
-        <a href="Tan Xin Wei - CME Pitch.pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          CME Group - Stock Pitch Deck
-        </a>
-        <a href="Tan Xin Wei - Schneider Electric Pitch.pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          Schneider Electric - Stock Pitch Deck
-        </a>
-        <a href="Tan Xin Wei - ANF Pitch Deck.pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          Abercrombie &amp; Fitch - Stock Pitch Deck
-        </a>
-      </div>
-    </section>
+      <!-- 1. RESUME -->
+      <section id="resume">
+        <h2>Resume</h2>
+        <div class="card-list">
+          <a href="Tan Xin Wei - Resume (Sept 2025).pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            Tan Xin Wei - Resume (Sept 2025)
+          </a>
+        </div>
+      </section>
 
-    <!-- 3. MARKETS & TRADING PITCHES -->
-    <section id="markets-pitches">
-      <h2>Markets &amp; Trading Pitches</h2>
-      <div class="card-list">
-        <a href="Tan Xin Wei - FX Trade Pitch.pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          AUD/USD - FX Pitch Deck
-        </a>
-        <a href="Tan Xin Wei - Rates Trade Pitch.pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          2s5s Flattener - Rates Pitch Deck
-        </a>
-      </div>
-    </section>
+      <!-- 2. EQUITY RESEARCH PITCHES -->
+      <section id="equity-pitches">
+        <h2>Equity Research Pitches</h2>
+        <div class="card-list">
+          <a href="Tan Xin Wei - CME Pitch.pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            CME Group - Stock Pitch Deck
+          </a>
+          <a href="Tan Xin Wei - Schneider Electric Pitch.pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            Schneider Electric - Stock Pitch Deck
+          </a>
+          <a href="Tan Xin Wei - ANF Pitch Deck.pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            Abercrombie &amp; Fitch - Stock Pitch Deck
+          </a>
+        </div>
+      </section>
 
-    <!-- 4. CERTIFICATIONS -->
-    <section id="certifications">
-      <h2>Certifications</h2>
-      <div class="card-list">
-        <a href="Bloomberg Finance Fundamentals.pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          Bloomberg Finance Fundamentals
-        </a>
-        <a href="Bloomberg Market Concepts.pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          Bloomberg Market Concepts
-        </a>
-        <a href="Introduction to ESG.pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          Introduction to ESG
-        </a>
-        <a href="ESG Integration and Financial Analysis.pdf"
-           class="card"
-           target="_blank" rel="noopener">
-          ESG Integration and Financial Analysis
-        </a>
-      </div>
-    </section>
+      <!-- 3. MARKETS & TRADING PITCHES -->
+      <section id="markets-pitches">
+        <h2>Markets &amp; Trading Pitches</h2>
+        <div class="card-list">
+          <a href="Tan Xin Wei - FX Trade Pitch.pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            AUD/USD - FX Pitch Deck
+          </a>
+          <a href="Tan Xin Wei - Rates Trade Pitch.pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            2s5s Flattener - Rates Pitch Deck
+          </a>
+        </div>
+      </section>
 
+      <!-- 4. CERTIFICATIONS -->
+      <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="card-list">
+          <a href="Bloomberg Finance Fundamentals.pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            Bloomberg Finance Fundamentals
+          </a>
+          <a href="Bloomberg Market Concepts.pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            Bloomberg Market Concepts
+          </a>
+          <a href="Introduction to ESG.pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            Introduction to ESG
+          </a>
+          <a href="ESG Integration and Financial Analysis.pdf"
+             class="card"
+             target="_blank" rel="noopener">
+            ESG Integration and Financial Analysis
+          </a>
+        </div>
+      </section>
+
+    </div>
   </div>
 </body>
 </html>
