@@ -39,15 +39,29 @@ layout: none
       color: #fff;
       padding: 20px;
       border-radius: 10px;
-      margin: 0 0 16px 0;
+      margin: 0 0 8px 0;
       text-align: center;
       letter-spacing: 0.2px;
+    }
+    .contact-info {
+      text-align: center;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+    .contact-info a {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
     }
     .actions {
       display: flex;
       justify-content: center;
       gap: 12px;
-      margin: 8px 0 40px;
+      margin: 8px 0 24px;
     }
     .btn {
       display: inline-flex;
@@ -65,6 +79,23 @@ layout: none
     }
     .btn:hover { background: #f7fbff; transform: translateY(-1px); }
     .btn:active { transform: translateY(0); }
+    .about-me {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+    }
+    .about-me h2 {
+      color: var(--brand);
+      margin: 0 0 12px 0;
+      font-size: 1.25rem;
+    }
+    .about-me p {
+      margin: 0;
+      color: var(--ink);
+    }
     section { margin-bottom: 48px; }
     section h2 {
       color: var(--brand);
@@ -98,6 +129,17 @@ layout: none
       background: rgba(255,255,255,0.98);
       transform: translateY(-1px);
     }
+    .card .card-title {
+      margin: 0 0 6px 0;
+      font-size: 1rem;
+    }
+    .card .card-description {
+      font-weight: 400;
+      font-size: 0.875rem;
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.45;
+    }
     @media (max-width: 480px) {
       h1 { font-size: 1.35rem; padding: 16px; }
       .btn { padding: 9px 12px; }
@@ -107,13 +149,27 @@ layout: none
 <body>
   <div class="page">
     <div class="container">
-      <h1>Tan Xin Wei | Portfolio Showcase</h1>
+      <h1>TAN XIN WEI<br><span style="font-size: 0.65em; font-weight: 400;">Portfolio Showcase</span></h1>
 
-      <!-- LinkedIn under main title -->
+      <!-- Contact Info -->
+      <div class="contact-info">
+        +65 9079 9567 | <a href="mailto:xiinweiitan@gmail.com">xiinweiitan@gmail.com</a>
+      </div>
+
+      <!-- LinkedIn and Pitch Deck Showcase -->
       <div class="actions">
         <a class="btn" href="https://www.linkedin.com/in/xin-wei-tan-036360294/?originalSubdomain=sg" target="_blank" rel="noopener">
           LinkedIn
         </a>
+        <a class="btn" href="https://drive.google.com/drive/folders/your-pitch-deck-folder" target="_blank" rel="noopener">
+          Pitch Deck Showcase
+        </a>
+      </div>
+
+      <!-- About Me -->
+      <div class="about-me">
+        <h2>About Me</h2>
+        <p>I am passionate about financial markets, data-driven investing, and global macro strategy. This digital portfolio consolidates my selected works across equity research, markets &amp; trading pitches, and certifications. Each section below is clickable to explore the full presentations and documents. Please visit the Pitch Deck Showcase link above for more uploads.</p>
       </div>
 
       <!-- 1. RESUME -->
@@ -167,7 +223,6 @@ layout: none
         </div>
       </section>
 
-
       <!-- 4. MARKETS & TRADING PITCHES -->
       <section id="markets-pitches">
         <h2>Markets &amp; Trading Pitches</h2>
@@ -185,7 +240,39 @@ layout: none
         </div>
       </section>
 
-      <!-- 5. CERTIFICATIONS -->
+      <!-- 5. QUANTITATIVE MODELS -->
+      <section id="quant-models">
+        <h2>Quantitative Models</h2>
+        <div class="card-list">
+          <a href="https://colab.research.google.com/drive/1QuBf535Rob_I8W1m2oqzlxQ50YtwVx_u?usp=sharing"
+             class="card"
+             target="_blank" rel="noopener">
+            <p class="card-title">NTU CEIT x Baringa International Trading Competition</p>
+            <p class="card-description">End-to-end Analytical Trading Model for liquified natural gas</p>
+          </a>
+          <a href="https://colab.research.google.com/drive/1sho4Xw6iMUjTsNNe4aAyxKSx8DP39gAb?usp=sharing"
+             class="card"
+             target="_blank" rel="noopener">
+            <p class="card-title">Japan REER Fair Value Model</p>
+            <p class="card-description">Systematic FX model combining REER valuation, carry dynamics, speculative positioning, and energy price sensitivity to generate mean-reversion signals; includes LLM-powered central bank policy analyzer, G10 currency scorecard, and automated PDF reporting</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- 6. UBS TOMORROW'S TALENT PROGRAM -->
+      <section id="ubs-program">
+        <h2>UBS Tomorrow's Talent Program - Global Markets (FinAI)</h2>
+        <div class="card-list">
+          <a href="#"
+             class="card"
+             target="_blank" rel="noopener">
+            <p class="card-title">AI-based Automated Analysis for Financial Derivatives Termsheets</p>
+            <p class="card-description">Automated term sheet analysis system reducing processing time 180x (3hrs → 60s) using DeepSeek-V3 LLM; achieved 99% accuracy across various products through logic-strict pathfinding (0% violations) and dynamic flowchart generation (zero templates)</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- 7. CERTIFICATIONS -->
       <section id="certifications">
         <h2>Certifications</h2>
         <div class="card-list">
